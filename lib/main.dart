@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'code_test/test_code.dart';
+import 'code_test/testing_screen.dart';
 import 'main_screen.dart';
 
 void main() {
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home:
+          //const TestingScreen(),
+          //HomeScreen(),
+          const HomeScreen(),
     );
   }
 }
@@ -42,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(120),
+          preferredSize: const Size.fromHeight(80),
           child: HeaderNavbar(
             selectedHeader: index,
             onSelect0: () => setState(() {
@@ -68,13 +73,16 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             MainScreen(),
             Center(
-              child: Text('Page 2'),
+              child: Text(
+                  'แสดงข้อมูลรายละเอียดโครงการ promotion ต่างๆ ของโครงการ ข่าวสารต่างๆ ในโครงการ ที่ตั้งโครงการ'),
             ),
             Center(
-              child: Text('Page 3'),
+              child: Text(
+                  'แสดงข้อมูลรายละเอียดบ้าน promotion ภาพตัวอย่าง ที่ตั้ง (google map)'),
             ),
             Center(
-              child: Text('Page 4'),
+              child: Text(
+                  'แสดงข้อมูลติดต่อ แยกตามโครงการ ประกอบด้วย เบอร์โทร LINE ที่ตั้ง (google map) Facebook page'),
             ),
           ],
         ));
@@ -103,7 +111,7 @@ class HeaderNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 60, right: 60,top: 15, bottom: 15),
+      padding: const EdgeInsets.only(left: 60, right: 60, top: 15, bottom: 15),
       child: Row(
         children: [
           Image.asset(
@@ -120,9 +128,7 @@ class HeaderNavbar extends StatelessWidget {
                   onPressed: onSelect0,
                   child: Text(
                     'หน้าหลัก',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: onSelect(0)),
+                    style: TextStyle(fontSize: 20, color: onSelect(0)),
                   ),
                 ),
               ),
@@ -162,9 +168,7 @@ class HeaderNavbar extends StatelessWidget {
                     //   },
                     child: Text(
                       'โครงการ',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: onSelect(1)),
+                      style: TextStyle(fontSize: 20, color: onSelect(1)),
                     ),
                   ),
                 ),
