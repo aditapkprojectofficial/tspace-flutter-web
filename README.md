@@ -1,4 +1,4 @@
-# tspace_web
+# tspace-flutter-web
 
 A new Flutter project.
 
